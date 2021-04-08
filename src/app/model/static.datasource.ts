@@ -4,7 +4,7 @@ import { from, Observable } from 'rxjs';
 import { Order } from './order.model';
 
 @Injectable()
-export class StaticDatasourceService {
+export class StaticDatasource {
   constructor() {}
 
   private products: Product[] = [

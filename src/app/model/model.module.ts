@@ -1,14 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductService } from './product.service';
-import { StaticDatasourceService } from './static-datasource.service';
 import { CartService } from './cart.service';
 import { Order } from './order.model';
 import { OrderService } from './order.service';
+import { DataStorageService } from './data-storage.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule],
-  providers: [ProductService, StaticDatasourceService, CartService, Order, OrderService],
+  imports: [CommonModule, HttpClientModule],
+  providers: [
+    ProductService,
+    CartService,
+    Order,
+    OrderService,
+    { provide: DataStorageService, useClass: DataStorageService },
+  ],
 })
 export class ModelModule {}

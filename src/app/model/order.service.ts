@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { StaticDatasourceService } from './static-datasource.service';
 import { Order } from './order.model';
 import { Observable } from 'rxjs';
+import { DataStorageService } from './data-storage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -9,12 +9,12 @@ import { Observable } from 'rxjs';
 export class OrderService {
   private orders: Order[] = [];
 
-  constructor(private dataSource: StaticDatasourceService) {}
+  constructor(private dataStorageService: DataStorageService) {}
 
   getOrders(): Order[] {
     return this.orders;
   }
   saveOrder(order: Order): Observable<Order> {
-    return this.dataSource.saveOrder(order);
+    return this.dataStorageService.saveOrder(order);
   }
 }
