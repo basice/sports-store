@@ -1,0 +1,9 @@
+/dist
+/tmp
+/out-tsc
+/coverage
+/hooks
+/integration/**/dist
+/src/schematics/
+**/test.ts
+**/*.md
