@@ -14,6 +14,7 @@ export class OrderService {
   getOrders(): Order[] {
     return this.orders;
   }
+
   saveOrder(order: Order): Observable<Order> {
     return this.dataStorageService.saveOrder(order);
   }

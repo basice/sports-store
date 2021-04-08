@@ -7,6 +7,7 @@ import { StoreComponent } from './store/store.component';
 })
 export class StoreFirstGuard {
   private firstNavigation = true;
+
   constructor(private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {

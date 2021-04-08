@@ -3,13 +3,10 @@ import { CartService } from '../../model/cart.service';
 
 @Component({
   selector: 'app-cart-detail',
-  templateUrl: './cart-detail.component.html'
+  templateUrl: './cart-detail.component.html',
 })
 export class CartDetailComponent implements OnInit {
+  constructor(public cart: CartService) {}
 
-  constructor(public cart: CartService) { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
