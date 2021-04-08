@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../model/product.model';
 import { ProductService } from '../model/product.service';
+import { CartService } from '../model/cart.service';
 
 @Component({
   selector: 'app-store',
@@ -12,7 +13,7 @@ export class StoreComponent implements OnInit {
   public productsPerPage = 4;
   public selectedPage = 1;
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private cartService: CartService) {}
 
   ngOnInit(): void {}
 
@@ -38,13 +39,11 @@ export class StoreComponent implements OnInit {
     this.changePage(1);
   }
 
-  /*get pageNumbers(): number[] {
-    return Array(Math.ceil(this.productService.getProducts(this.selectedCategory).length / this.productsPerPage))
-      .fill(0)
-      .map((x, i) => i + 1);
-  }*/
-
   get pageCount(): number {
     return Math.ceil(this.productService.getProducts(this.selectedCategory).length / this.productsPerPage);
+  }
+
+  addProductToCart(product: Product) {
+    this.cartService.addLine(product);
   }
 }
