@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
 import { StoreComponent } from './store/store.component';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class StoreFirstGuard {
   private firstNavigation = true;
 
