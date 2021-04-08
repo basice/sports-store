@@ -9,13 +9,18 @@ import { ProductService } from '../model/product.service';
 })
 export class StoreComponent implements OnInit {
   public selectedCategory = null;
+  public productsPerPage = 4;
+  public selectedPage = 1;
 
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {}
 
   get products(): Product[] {
-    return this.productService.getProducts(this.selectedCategory);
+    const pageIndex = (this.selectedPage - 1) * this.productsPerPage;
+    return this.productService
+      .getProducts(this.selectedCategory)
+      .slice(pageIndex, pageIndex + this.productsPerPage);
   }
 
   get categories(): string[] {
@@ -24,5 +29,25 @@ export class StoreComponent implements OnInit {
 
   changeCategory(newCategory?: string) {
     this.selectedCategory = newCategory;
+  }
+
+  changePage(newPage: number) {
+    this.selectedPage = newPage;
+  }
+
+  changePageSize(newSize: number) {
+    this.productsPerPage = Number(newSize);
+    this.changePage(1);
+  }
+
+  get pageNumbers(): number[] {
+    return Array(
+      Math.ceil(
+        this.productService.getProducts(this.selectedCategory).length /
+          this.productsPerPage,
+      ),
+    )
+      .fill(0)
+      .map((x, i) => i + 1);
   }
 }
