@@ -1,27 +1,15 @@
-# SportsStore
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.7.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Pro Angular 9 Project: SportStore
+1. [SportsStore: A Real Application](https://github.com/basice/sports-store/tree/01-start)
+1. [Preparing the Angular Project Features](https://github.com/basice/sports-store/tree/02-basics)
+1. [Starting the Data Model](https://github.com/basice/sports-store/tree/03-model)
+1. [Starting the Store](https://github.com/basice/sports-store/tree/04-store)
+1. [Adding Store Features the Product Details](https://github.com/basice/sports-store/tree/05-products)
+1. [SportsStore: Orders and Checkout](https://github.com/basice/sports-store/tree/06-orders-and-checkout)
+1. [Adding URL Routing](https://github.com/basice/sports-store/tree/07-routing)
+1. [Completing the Cart Detail Feature](https://github.com/basice/sports-store/tree/08-cart)
+1. [Processing Orders](https://github.com/basice/sports-store/tree/09-orders)
+1. [Using the REST Web Service](https://github.com/basice/sports-store/tree/10-http)
+1. [SportsStore: Administration](https://github.com/basice/sports-store/tree/11-administration)
+1. [Implementing Authentication](https://github.com/basice/sports-store/tree/12-authentication)
+1. [Extending the Data Source and Repositories](https://github.com/basice/sports-store/tree/13-data-auth)
+1. [Creating the Administration Feature Structure](https://github.com/basice/sports-store/tree/14-product-and-orders)
