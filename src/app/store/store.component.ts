@@ -18,9 +18,7 @@ export class StoreComponent implements OnInit {
 
   get products(): Product[] {
     const pageIndex = (this.selectedPage - 1) * this.productsPerPage;
-    return this.productService
-      .getProducts(this.selectedCategory)
-      .slice(pageIndex, pageIndex + this.productsPerPage);
+    return this.productService.getProducts(this.selectedCategory).slice(pageIndex, pageIndex + this.productsPerPage);
   }
 
   get categories(): string[] {
@@ -40,14 +38,13 @@ export class StoreComponent implements OnInit {
     this.changePage(1);
   }
 
-  get pageNumbers(): number[] {
-    return Array(
-      Math.ceil(
-        this.productService.getProducts(this.selectedCategory).length /
-          this.productsPerPage,
-      ),
-    )
+  /*get pageNumbers(): number[] {
+    return Array(Math.ceil(this.productService.getProducts(this.selectedCategory).length / this.productsPerPage))
       .fill(0)
       .map((x, i) => i + 1);
+  }*/
+
+  get pageCount(): number {
+    return Math.ceil(this.productService.getProducts(this.selectedCategory).length / this.productsPerPage);
   }
 }
