@@ -44,11 +44,11 @@ export class DataStorageService {
   }
 
   updateProduct(product: Product): Observable<Product> {
-    return this.http.put<Product>(`${this.baseUrl}'products/${product.id}`, product, this.getOptions());
+    return this.http.put<Product>(`${this.baseUrl}products/${product.id}`, product, this.getOptions());
   }
 
   deleteProduct(id: number): Observable<Product> {
-    return this.http.put<Product>(`${this.baseUrl}'products/${id}`, this.getOptions());
+    return this.http.delete<Product>(`${this.baseUrl}products/${id}`, this.getOptions());
   }
 
   getOrders(): Observable<Order[]> {
@@ -56,11 +56,11 @@ export class DataStorageService {
   }
 
   deleteOrder(id: number): Observable<Order> {
-    return this.http.put<Order>(`${this.baseUrl}'orders/${id}`, this.getOptions());
+    return this.http.delete<Order>(`${this.baseUrl}orders/${id}`, this.getOptions());
   }
 
   updateOrder(order: Order): Observable<Order> {
-    return this.http.put<Order>(`${this.baseUrl}'orders/${order.id}`, order, this.getOptions());
+    return this.http.put<Order>(`${this.baseUrl}orders/${order.id}`, order, this.getOptions());
   }
 
   private getOptions() {
