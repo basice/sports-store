@@ -6,6 +6,7 @@ import { Order } from './order.model';
 import { OrderService } from './order.service';
 import { DataStorageService } from './data-storage.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [],
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     Order,
     OrderService,
     { provide: DataStorageService, useClass: DataStorageService },
+    AuthService,
   ],
 })
 export class ModelModule {}
