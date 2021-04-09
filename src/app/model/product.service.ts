@@ -28,4 +28,29 @@ export class ProductService {
   getCategories(): string[] {
     return this.categories;
   }
+
+  saveProduct(product: Product) {
+    if (product.id == null || product.id == 0) {
+      this.dataStorageService.saveProduct(product).subscribe((p) => {
+        this.products.push(p);
+      });
+    } else {
+      this.dataStorageService.updateProduct(product).subscribe((p) => {
+        this.products.splice(
+          this.products.findIndex((p) => p.id == product.id),
+          1,
+          product,
+        );
+      });
+    }
+  }
+
+  deleteProduct(id: number) {
+    this.dataStorageService.deleteProduct(id).subscribe((p) => {
+      this.products.splice(
+        this.products.findIndex((p) => p.id == id),
+        1,
+      );
+    });
+  }
 }
