@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DataStorageService } from './data-storage.service';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class AuthService {
   constructor(private dataStorageService: DataStorageService) {}
 
