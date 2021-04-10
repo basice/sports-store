@@ -10,5 +10,4 @@
 1. [Using the REST Web Service](https://github.com/basice/sports-store/tree/09-http)
 1. [SportsStore: Administration](https://github.com/basice/sports-store/tree/10-administration)
 1. [Implementing Authentication](https://github.com/basice/sports-store/tree/11-authentication)
-1. [Extending the Data Source and Repositories](https://github.com/basice/sports-store/tree/12-data-auth)
-1. [Creating the Administration Feature Structure](https://github.com/basice/sports-store/tree/13-product-and-orders)
+1. [Creating the Administration Feature Structure](https://github.com/basice/sports-store/tree/12-product-and-orders)
