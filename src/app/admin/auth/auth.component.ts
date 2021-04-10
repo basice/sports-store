@@ -12,13 +12,13 @@ export class AuthComponent implements OnInit {
   password: string;
   errorMessage: string;
 
-  constructor(private router: Router, private auth: AuthService) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {}
 
   authenticate(form: NgForm) {
     if (form.valid) {
-      this.auth.authenticate(this.username, this.password).subscribe((response) => {
+      this.authService.authenticate(this.username, this.password).subscribe((response) => {
         if (response) {
           this.router.navigateByUrl('/admin/main');
         }
